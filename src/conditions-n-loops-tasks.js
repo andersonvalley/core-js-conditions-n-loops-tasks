@@ -124,8 +124,68 @@ function convertToRomanNumerals(/* num */) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
+function convertNumberToString(numberStr) {
+  let result = '';
+  for (let i = 0; i < numberStr.length; i += 1) {
+    const cond = i !== numberStr.length - 1;
+    switch (numberStr[i]) {
+      case '0':
+        result += 'zero';
+        if (cond) result += ' ';
+        break;
+      case '1':
+        result += 'one';
+        if (cond) result += ' ';
+        break;
+      case '2':
+        result += 'two';
+        if (cond) result += ' ';
+        break;
+      case '3':
+        result += 'three';
+        if (cond) result += ' ';
+        break;
+      case '4':
+        result += 'four';
+        if (cond) result += ' ';
+        break;
+      case '5':
+        result += 'five';
+        if (cond) result += ' ';
+        break;
+      case '6':
+        result += 'six';
+        if (cond) result += ' ';
+        break;
+      case '7':
+        result += 'seven';
+        if (cond) result += ' ';
+        break;
+      case '8':
+        result += 'eight';
+        if (cond) result += ' ';
+        break;
+      case '9':
+        result += 'nine';
+        if (cond) result += ' ';
+        break;
+      case '-':
+        result += 'minus';
+        if (cond) result += ' ';
+        break;
+      case '+':
+        result += 'plus';
+        if (cond) result += ' ';
+        break;
+
+      default:
+        result += 'point';
+        if (cond) result += ' ';
+        break;
+    }
+  }
+
+  return result;
 }
 
 /**
@@ -140,8 +200,14 @@ function convertNumberToString(/* numberStr */) {
  *  '0123210'   => true
  *  'qweqwe'    => false
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  let temp = '';
+
+  for (let i = str.length - 1; i >= 0; i -= 1) {
+    temp += str[i];
+  }
+
+  return str === temp;
 }
 
 /**
